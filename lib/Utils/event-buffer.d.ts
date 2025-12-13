@@ -25,6 +25,8 @@ type WileysBufferableEventEmitter = WileysEventEmitter & {
     flush(force?: boolean): boolean;
     /** is there an ongoing buffer */
     isBuffering(): boolean;
+    /** Clears all buffered events without processing them */
+    clearBuffer(): void;
 };
 /**
  * The event buffer logically consolidates different events into a single event
