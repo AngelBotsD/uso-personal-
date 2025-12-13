@@ -61,7 +61,9 @@
     "pino": "^9.6",
     "protobufjs": "^6.11.3",
     "uuid": "^10.0.0",
-    "ws": "^8.13.0"
+    "ws": "^8.13.0",
+    "fast-xml-parser": "^4.2.5",
+    "fast-json-stable-stringify": "^2.1.0"
   },
   "devDependencies": {
     "@adiwajshing/eslint-config": "github:adiwajshing/eslint-config",
