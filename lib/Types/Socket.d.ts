@@ -7,6 +7,7 @@ import { GroupMetadata } from './GroupMetadata';
 import { MediaConnInfo } from './Message';
 import { SignalRepository } from './Signal';
 import { ILogger } from '../Utils/logger';
+
 export type WAVersion = [number, number, number];
 export type WABrowserDescription = [string, string, string];
 export type CacheStore = {
@@ -19,9 +20,11 @@ export type CacheStore = {
     /** flush all data */
     flushAll(): void;
 };
+
 export type PatchedMessageWithRecipientJID = proto.IMessage & {
     recipientJid?: string;
 };
+
 export type SocketConfig = {
     /** the WS url to connect to WA */
     waWebSocketUrl: string | URL;
@@ -116,4 +119,8 @@ export type SocketConfig = {
     /** cached group metadata, use to prevent redundant requests to WA & speed up msg sending */
     cachedGroupMetadata: (jid: string) => Promise<GroupMetadata | undefined>;
     makeSignalRepository: (auth: SignalAuthState) => SignalRepository;
+    /** Enable parallel message processing for faster reading and responding */
+    enableParallelMessageProcessing?: boolean;
+    /** Maximum number of parallel message processing threads */
+    maxParallelMessageThreads?: number;
 };
