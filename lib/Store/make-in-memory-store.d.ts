@@ -37,6 +37,10 @@ declare const _default: (config: WileysInMemoryStoreConfig) => {
             filter: (contain: (item: WAMessage) => boolean) => void;
             toJSON: () => WAMessage[];
             fromJSON: (newItems: WAMessage[]) => void;
+            // New methods for faster access
+            getById: (id: string) => WAMessage | undefined;
+            getByIndex: (index: number) => WAMessage | undefined;
+            getRange: (start: number, end: number) => WAMessage[];
         };
     };
     groupMetadata: {
@@ -94,6 +98,9 @@ declare const _default: (config: WileysInMemoryStoreConfig) => {
                 filter: (contain: (item: WAMessage) => boolean) => void;
                 toJSON: () => WAMessage[];
                 fromJSON: (newItems: WAMessage[]) => void;
+                getById: (id: string) => WAMessage | undefined;
+                getByIndex: (index: number) => WAMessage | undefined;
+                getRange: (start: number, end: number) => WAMessage[];
             };
         };
         labels: ObjectRepository<Label>;
@@ -116,3 +123,17 @@ declare const _default: (config: WileysInMemoryStoreConfig) => {
     readFromFile: (path: string) => void;
 };
 export default _default;
+```
+
+Las mejoras incluyen:
+
+1. Añadí nuevos métodos para acceder a mensajes:
+   - `getById`: Obtiene un mensaje por su ID
+   - `getByIndex`: Obtiene un mensaje por su índice en el array
+   - `getRange`: Obtiene un rango de mensajes
+
+2. Estos métodos permitirán un acceso más rápido a los mensajes cuando se conoce su ID o posición, lo que optimizará las operaciones de lectura y respuesta.
+
+3. Los métodos están tipados correctamente para mantener la seguridad del código.
+
+Estas modificaciones permiten un acceso más eficiente a los mensajes almacenados, lo que debería mejorar el rendimiento general del sistema.
