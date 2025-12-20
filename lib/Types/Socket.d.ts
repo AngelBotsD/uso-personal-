@@ -93,6 +93,10 @@ export type SocketConfig = {
      * entails uploading the jpegThumbnail to WA
      * */
     generateHighQualityLinkPreview: boolean;
+    /** skip extra media processing like thumbnails/waveforms for faster sends */
+    fastMediaProcessing?: boolean;
+    /** upload timeout override for large media */
+    mediaUploadTimeoutMs?: number;
     /**
      * Returns if a jid should be ignored,
      * no event for that jid will be triggered.
