@@ -56,8 +56,12 @@ export type SocketConfig = {
     customUploadHosts: MediaConnInfo['hosts'];
     /** time to wait between sending new retry requests */
     retryRequestDelayMs: number;
+    /** minimum interval between websocket sends */
+    minSendIntervalMs: number;
     /** max retry count */
     maxMsgRetryCount: number;
+    /** delay to apply after receiving rate limit errors */
+    backoffDelayMs?: number;
     /** time to wait for the generation of the next QR in ms */
     qrTimeout?: number;
     /** provide an auth state object to maintain the auth state */
@@ -93,10 +97,6 @@ export type SocketConfig = {
      * entails uploading the jpegThumbnail to WA
      * */
     generateHighQualityLinkPreview: boolean;
-    /** skip extra media processing like thumbnails/waveforms for faster sends */
-    fastMediaProcessing?: boolean;
-    /** upload timeout override for large media */
-    mediaUploadTimeoutMs?: number;
     /**
      * Returns if a jid should be ignored,
      * no event for that jid will be triggered.
