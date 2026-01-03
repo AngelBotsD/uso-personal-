@@ -19,7 +19,7 @@
     "url": "https://github.com/Ado21/bly"
   },
   "license": "MIT",
-  "author": "wileys",
+  "author": "Ado",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -38,8 +38,8 @@
     "gen:protobuf": "sh WAProto/GenerateStatics.sh",
     "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "eslint src --fix --ext .js,.ts,.jsx,.tsx",
-    "prepack": "echo 'Wileys WhatsApp Library'",
-    "prepare": "echo 'Wileys WhatsApp Library'",
+    "prepack": "echo 'WaBail WhatsApp Library'",
+    "prepare": "echo 'WaBail WhatsApp Library'",
     "preinstall": "node ./engine-requirements.js",
     "release": "release-it",
     "test": "jest"
@@ -55,7 +55,7 @@
     "cache-manager": "^5.7.6",
     "cheerio": "^1.0.0-rc.10",
     "libphonenumber-js": "^1.10.20",
-    "libsignal": "github:NaufalYupra/libsignal-node",
+    "libsignal": "git+https://github.com/whiskeysockets/libsignal-node",
     "lodash": "^4.17.21",
     "music-metadata": "^7.12.3",
     "pino": "^9.6",
