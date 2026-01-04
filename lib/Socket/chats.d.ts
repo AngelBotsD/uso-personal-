@@ -7,6 +7,18 @@ export declare const makeChatsSocket: (config: SocketConfig) => {
     processingMutex: {
         mutex<T>(code: () => Promise<T> | T): Promise<T>;
     };
+    messageMutex: {
+        mutex<T>(code: () => Promise<T> | T): Promise<T>;
+    };
+    receiptMutex: {
+        mutex<T>(code: () => Promise<T> | T): Promise<T>;
+    };
+    notificationMutex: {
+        mutex<T>(code: () => Promise<T> | T): Promise<T>;
+    };
+    appStatePatchMutex: {
+        mutex<T>(code: () => Promise<T> | T): Promise<T>;
+    };
     fetchPrivacySettings: (force?: boolean) => Promise<{
         [_: string]: string;
     }>;
