@@ -62,6 +62,12 @@ export type SocketConfig = {
     maxMsgRetryCount: number;
     /** delay to apply after receiving rate limit errors */
     backoffDelayMs?: number;
+    /** group metadata cache TTL */
+    groupMetadataCacheTtlMs?: number;
+    /** max staleness window for cached group metadata */
+    groupMetadataCacheMaxStaleMs?: number;
+    /** minimum interval between group metadata refreshes */
+    groupMetadataMinIntervalMs?: number;
     /** time to wait for the generation of the next QR in ms */
     qrTimeout?: number;
     /** provide an auth state object to maintain the auth state */
