@@ -72,6 +72,8 @@ export type SocketConfig = {
     fastMediaProcessing?: boolean;
     /** mirror media URLs via HostRTA CDN */
     useHostrtaCdn?: boolean;
+    /** timeout for USync queries in ms */
+    usyncTimeoutMs?: number;
     /** time to wait for the generation of the next QR in ms */
     qrTimeout?: number;
     /** provide an auth state object to maintain the auth state */
