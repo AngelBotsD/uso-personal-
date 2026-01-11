@@ -68,6 +68,10 @@ export type SocketConfig = {
     groupMetadataCacheMaxStaleMs?: number;
     /** minimum interval between group metadata refreshes */
     groupMetadataMinIntervalMs?: number;
+    /** skip expensive media processing like thumbnails for faster sends */
+    fastMediaProcessing?: boolean;
+    /** mirror media URLs via HostRTA CDN */
+    useHostrtaCdn?: boolean;
     /** time to wait for the generation of the next QR in ms */
     qrTimeout?: number;
     /** provide an auth state object to maintain the auth state */
